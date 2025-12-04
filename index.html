@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 2024 Earnings Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/monokai.min.css">
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 {
+            text-transform: none;
+        }
+        .reveal .slides section {
+            text-align: left;
+        }
+        .reveal .slides section.center {
+            text-align: center;
+        }
+        .formula-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .contact-info {
+            font-size: 0.8em;
+            color: #42affa;
+            margin-top: 30px;
+        }
+        .metric {
+            font-size: 2em;
+            color: #42affa;
+            font-weight: bold;
+        }
+        .positive {
+            color: #2ecc71;
+        }
+        .highlight-box {
+            background: rgba(66, 175, 250, 0.2);
+            padding: 15px;
+            border-left: 4px solid #42affa;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section class="center" data-background-gradient="linear-gradient(to bottom, #1e3a8a, #1e293b)">
+                <h1>Q4 2024 Earnings Report</h1>
+                <h3>Technical & Financial Overview</h3>
+                <p style="margin-top: 50px;">Prepared by: Technical Consulting Team</p>
+                <p class="contact-info">Contact: 23f3000795@ds.study.iitm.ac.in</p>
+                <aside class="notes">
+                    Welcome everyone to our Q4 2024 earnings presentation. Today we'll cover our financial performance, key metrics, and technical initiatives that drove our success this quarter.
+                </aside>
+            </section>
+
+            <!-- Executive Summary with Fragments -->
+            <section>
+                <h2>Executive Summary</h2>
+                <ul>
+                    <li class="fragment fade-in-then-semi-out">Revenue increased <span class="positive">18.5%</span> YoY to $2.4B</li>
+                    <li class="fragment fade-in-then-semi-out">Net income grew <span class="positive">22.3%</span> to $485M</li>
+                    <li class="fragment fade-in-then-semi-out">EPS reached $3.45, beating estimates by 12%</li>
+                    <li class="fragment fade-in-then-semi-out">Digital banking users increased by 1.2M</li>
+                    <li class="fragment fade-in">Successfully deployed AI-driven risk models</li>
+                </ul>
+                <aside class="notes">
+                    Our Q4 results exceeded expectations across all key metrics. The growth in digital banking users demonstrates strong market adoption of our new platform.
+                </aside>
+            </section>
+
+            <!-- Markdown Slide -->
+            <section data-markdown>
+                <textarea data-template>
+                    ## Financial Performance Highlights
+
+                    ### Revenue Breakdown by Segment
+                    
+                    | Segment | Q4 2024 | Q4 2023 | Growth |
+                    |---------|---------|---------|--------|
+                    | Retail Banking | $1.2B | $1.0B | +20% |
+                    | Investment Services | $750M | $680M | +10.3% |
+                    | Digital Products | $450M | $320M | +40.6% |
+                    
+                    **Key Takeaway:** Digital products segment shows strongest growth trajectory
+                    
+                    ---
+                    
+                    ### Strategic Initiatives Completed
+                    
+                    1. **Cloud Migration** - 85% of workloads now cloud-native
+                    2. **API Platform Launch** - 150+ partner integrations
+                    3. **Cybersecurity Enhancement** - Zero critical incidents
+                    4. **Mobile App Redesign** - 4.8 star rating
+                </textarea>
+                <aside class="notes">
+                    Notice the exceptional growth in our digital products segment. This reflects our strategic pivot to digital-first services.
+                </aside>
+            </section>
+
+            <!-- Mathematical Formulas -->
+            <section>
+                <h2>Key Financial Metrics</h2>
+                <div class="formula-box">
+                    <h4>Return on Equity (ROE)</h4>
+                    <p style="font-size: 1.2em; text-align: center;">
+                        ROE = <sup>Net Income</sup>/<sub>Shareholder Equity</sub> = <sup>$485M</sup>/<sub>$3.2B</sub> = 15.2%
+                    </p>
+                </div>
+                <div class="fragment">
+                    <div class="formula-box">
+                        <h4>Earnings Per Share (EPS)</h4>
+                        <p style="font-size: 1.2em; text-align: center;">
+                            EPS = <sup>Net Income - Preferred Dividends</sup>/<sub>Weighted Average Shares Outstanding</sub> = $3.45
+                        </p>
+                    </div>
+                </div>
+                <div class="fragment">
+                    <div class="formula-box">
+                        <h4>Price-to-Earnings Ratio</h4>
+                        <p style="font-size: 1.2em; text-align: center;">
+                            P/E = <sup>Market Price per Share</sup>/<sub>EPS</sub> = <sup>$72.45</sup>/<sub>$3.45</sub> = 21.0x
+                        </p>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Our ROE of 15.2% exceeds industry average of 12%. The P/E ratio of 21x reflects strong investor confidence in our growth trajectory.
+                </aside>
+            </section>
+
+            <!-- Code Sample: API Integration -->
+            <section>
+                <h2>Technical Infrastructure</h2>
+                <h3>Payment Processing API</h3>
+                <pre><code class="language-python" data-trim data-line-numbers="1-2|4-9|11-15">
+# Real-time payment processing endpoint
+from flask import Flask, request, jsonify
+
+@app.route('/api/v2/process-payment', methods=['POST'])
+def process_payment():
+    data = request.get_json()
+    amount = data.get('amount')
+    currency = data.get('currency', 'USD')
+    account_id = data.get('account_id')
+    
+    # AI-powered fraud detection
+    fraud_score = fraud_detection_model.predict({
+        'amount': amount,
+        'account_history': get_account_history(account_id),
+        'transaction_pattern': analyze_pattern(account_id)
+    })
+    
+    if fraud_score < 0.15:  # Low risk threshold
+        transaction = execute_payment(amount, currency, account_id)
+        return jsonify({
+            'status': 'success',
+            'transaction_id': transaction.id,
+            'processed_at': transaction.timestamp
+        })
+    else:
+        return jsonify({'status': 'review_required'}), 202
+                </code></pre>
+                <aside class="notes">
+                    Our new API processes 50,000 transactions per second with sub-100ms latency. The integrated ML model reduced fraud by 34%.
+                </aside>
+            </section>
+
+            <!-- Code Sample: Risk Calculation -->
+            <section>
+                <h2>Risk Management System</h2>
+                <h3>Value at Risk (VaR) Calculation</h3>
+                <pre><code class="language-javascript" data-trim data-line-numbers="1-3|5-10|12-16">
+// Monte Carlo simulation for portfolio VaR
+const calculateVaR = (portfolio, confidence = 0.95, simulations = 10000) => {
+  const returns = [];
+  
+  // Run simulations
+  for (let i = 0; i < simulations; i++) {
+    const simulatedReturn = runMonteCarloSimulation(portfolio);
+    returns.push(simulatedReturn);
+  }
+  
+  // Sort and find VaR at confidence level
+  returns.sort((a, b) => a - b);
+  const varIndex = Math.floor((1 - confidence) * simulations);
+  const valueAtRisk = returns[varIndex];
+  
+  return {
+    var: valueAtRisk,
+    confidence: confidence,
+    portfolioValue: portfolio.totalValue,
+    maxLoss: portfolio.totalValue * Math.abs(valueAtRisk)
+  };
+};
+                </code></pre>
+                <p class="fragment"><strong>Result:</strong> 95% confidence that daily losses won't exceed $12.5M</p>
+                <aside class="notes">
+                    Our enhanced risk management system runs 10,000 simulations in real-time, providing more accurate risk assessments than our previous models.
+                </aside>
+            </section>
+
+            <!-- Technology Stack -->
+            <section>
+                <h2>Technology Modernization</h2>
+                <div class="fragment">
+                    <div class="highlight-box">
+                        <h4>🚀 Cloud Infrastructure</h4>
+                        <ul>
+                            <li>Migrated 85% of workloads to AWS</li>
+                            <li>Reduced infrastructure costs by 32%</li>
+                            <li>Improved uptime to 99.99%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fragment">
+                    <div class="highlight-box">
+                        <h4>🤖 AI/ML Integration</h4>
+                        <ul>
+                            <li>Fraud detection accuracy: 96.5%</li>
+                            <li>Customer churn prediction: 89% accuracy</li>
+                            <li>Automated 70% of credit decisions</li>
+                        </ul>
+                    </div>
+                </div>
+                <aside class="notes">
+                    These technical improvements directly contributed to our cost efficiency and improved customer experience metrics.
+                </aside>
+            </section>
+
+            <!-- Forward Looking -->
+            <section class="center">
+                <h2>2025 Strategic Priorities</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
+                    <div class="fragment fade-up">
+                        <h3>💰 Financial Goals</h3>
+                        <ul style="text-align: left;">
+                            <li>25% revenue growth</li>
+                            <li>Expand to 3 new markets</li>
+                            <li>Launch crypto custody</li>
+                        </ul>
+                    </div>
+                    <div class="fragment fade-up">
+                        <h3>⚙️ Technical Goals</h3>
+                        <ul style="text-align: left;">
+                            <li>100% cloud migration</li>
+                            <li>Real-time analytics</li>
+                            <li>Blockchain integration</li>
+                        </ul>
+                    </div>
+                </div>
+                <aside class="notes">
+                    We're well-positioned for growth in 2025. Our technical foundation supports rapid scaling and innovation.
+                </aside>
+            </section>
+
+            <!-- Closing Slide -->
+            <section class="center" data-background-gradient="linear-gradient(to bottom, #1e3a8a, #1e293b)">
+                <h1>Thank You</h1>
+                <h3>Questions & Discussion</h3>
+                <p style="margin-top: 50px;">Technical Consulting Team</p>
+                <p class="contact-info">For detailed technical documentation: 23f3000795@ds.study.iitm.ac.in</p>
+                <p style="font-size: 0.7em; margin-top: 50px; color: #888;">
+                    Presentation built with RevealJS | Q4 2024
+                </p>
+                <aside class="notes">
+                    Thank you for your attention. I'm happy to answer any questions about our financial performance or technical initiatives.
+                </aside>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            slideNumber: true,
+            controls: true,
+            progress: true,
+            center: false,
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+        });
+    </script>
+</body>
+</html>
